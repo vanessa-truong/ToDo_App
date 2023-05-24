@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.deleteIcon {
+  height: 20px;
+  
+}
+
+
+.trash{
+  width: 20px;
+}
+
+#output {
+  margin-right: 50vw;
+}
