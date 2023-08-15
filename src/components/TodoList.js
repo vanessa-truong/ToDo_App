@@ -1,74 +1,68 @@
 import { useState } from "react";
 
 const TodoList = () => {
-    const[todo, setTodo] = useState(["Einkaufen gehen"]);
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState("");
 
-    const [input, setInput] = useState("");
-
-
-    const addTodo = (e) => {
-        const inputTodo = document.getElementById('inputTodo');
-        setTodo([...todo, inputTodo.value]);
-        inputTodo.value = '';
+  const addTodo = () => {
+    if (input.trim() !== "") {
+      setTodos([...todos, { text: input, completed: false }]);
+      setInput("");
     }
+  };
 
+  const toggleComplete = (index) => {
+    const updatedTodos = [...todos];
+    updatedTodos[index].completed = !updatedTodos[index].completed;
+    setTodos(updatedTodos);
+  };
 
-    const handleChange = (e) => {
-        setInput(e.target.value);
+  const deleteTodo = (index) => {
+    const updatedTodos = todos.filter((_, i) => i !== index);
+    setTodos(updatedTodos);
+  };
+
+  const handleInputKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      addTodo();
     }
+  };
 
-    const handleSubmit = (e) => {
-        e.prefentDefault()
-    }
+  return (
+    <section className="whole_section">
+      <form action="">
+        <input
+          className="inputfield"
+          type="text"
+          id="inputTodo"
+          placeholder="Add to do.."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleInputKeyDown}
+        />
+      </form>
 
-    const lineThrough = (elt, checked) => {
-        const outputList = document.querySelectorAll('.outputList');
-        const output = outputList[elt];
-        output.style.textDecoration = checked ? "line-through" : "none";
-    }
-
-    const deleteTodo = (elt) => {
-        const outputList = document.querySelectorAll(".outputList");
-        const output = outputList[elt];
-        if (output.style.textDecoration === "line-through") {
-            output.style.display = "none";
-        }
-    }
-
-
-
-    return ( 
-        <section>
-            {todo.map((elt, index) => {
-                return (
-            <div className="outputList" key={index} > 
-                <input 
-                type="checkbox" 
-                onClick={(event) => lineThrough(index, event.target.checked)}
-                />
-                <label>{elt}</label>
-                <button>
-                    <img src="https://cdn-icons-png.flaticon.com/128/542/542724.png" alt="#" className="trash" onClick={() => deleteTodo(index, true)}/>
-                </button>
-            </div>
-            )
-            })}
-
-            <form action="" onSubmit={handleSubmit}>
-                <input 
-                type="text" 
-                id="inputTodo" 
-                placeholder="Add to do.." 
-                onChange={handleChange}/
-                >
-                <input 
-                type="button" 
-                value="Submit" 
-                id="button" 
-                onClick={addTodo}/>
-            </form>
-        </section>
-    );
-}
+      {todos.map((todo, index) => (
+        <div
+          className={`outputList ${todo.completed ? "completed" : ""}`}
+          key={index}
+        >
+          <input type="checkbox" onClick={() => toggleComplete(index)} />
+          <label className={todo.completed ? "completed" : ""}>
+            {todo.text}
+          </label>
+          <button className="deleteButton" onClick={() => deleteTodo(index)}>
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/542/542724.png"
+              alt="#"
+              className="trash"
+            />
+          </button>
+        </div>
+      ))}
+    </section>
+  );
+};
 
 export default TodoList;

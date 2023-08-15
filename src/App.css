@@ -2,51 +2,107 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+  background-color: rgb(0, 0, 0);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h1 {
+  margin: 40px 0;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.whole_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inputfield {
+  font-size: 16px;
+  border: none;
+  padding: 10px;
+  outline: none;
+  border-radius: 24px;
+  background-color: #323131;
+  border: 2px solid rgba(255, 255, 255, 0.58);
+  color: white;
+  width: 50vw;
+  margin-right: 10px;
+  transition: border-color 0.6s ease;
+  margin-bottom: 30px;
+}
+
+.inputfield:focus {
+  border-color: slateblue; /* Ändere die Border-Farbe beim Fokussieren */
 }
 
 .deleteIcon {
   height: 20px;
-  
 }
 
-
-.trash{
+.trash {
   width: 20px;
 }
 
 #output {
   margin-right: 50vw;
+}
+
+.outputList {
+  display: flex;
+  align-items: center;
+  background-color: grey;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  color: white;
+  width: 60vw;
+}
+
+.outputList label {
+  margin-left: 10px; /* Füge diese Zeile hinzu */
+}
+
+.outputList.completed {
+  background-color: darkgrey;
+  text-decoration: line-through;
+  color: #d3d3d3;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.checkmark {
+  color: white;
+  font-size: 16px;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.cross {
+  color: white;
+  font-size: 16px;
+}
+
+.completed label {
+  text-decoration: line-through;
 }
