@@ -1,4 +1,5 @@
 import { useState } from "react";
+import x from "../images/x.svg";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -40,6 +41,7 @@ const TodoList = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleInputKeyDown}
+          autocomplete="off"
         />
       </form>
 
@@ -55,11 +57,7 @@ const TodoList = () => {
             {todo.text}
           </label>
           <button className="deleteButton" onClick={() => deleteTodo(index)}>
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/542/542724.png"
-              alt="#"
-              className="trash"
-            />
+            <img src={x} alt="#" className="trash" />
           </button>
         </div>
       ))}

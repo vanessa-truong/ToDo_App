@@ -46,10 +46,6 @@ h1 {
   height: 20px;
 }
 
-.trash {
-  width: 20px;
-}
-
 #output {
   margin-right: 50vw;
 }
@@ -57,7 +53,7 @@ h1 {
 .outputList {
   display: flex;
   align-items: center;
-  background-color: grey;
+  background-color: rgb(79, 79, 79);
   padding: 17px;
   margin: 5px 0;
   border-radius: 10px;
@@ -79,9 +75,9 @@ h1 {
 }
 
 .outputList.completed {
-  background-color: darkgrey;
+  background-color: rgb(107, 107, 107);
   text-decoration: line-through;
-  color: #d3d3d3;
+  color: #cfcece;
 }
 
 .checkbox {
@@ -106,6 +102,10 @@ h1 {
   border: none;
   cursor: pointer;
   margin-left: auto;
+}
+
+.trash {
+  width: 30px;
 }
 
 .cross {
