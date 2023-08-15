@@ -31,6 +31,7 @@ h1 {
   background-color: #323131;
   border: 2px solid rgba(255, 255, 255, 0.58);
   color: white;
+  font-weight: bolder;
   width: 50vw;
   margin-right: 10px;
   transition: border-color 0.6s ease;
@@ -57,11 +58,20 @@ h1 {
   display: flex;
   align-items: center;
   background-color: grey;
-  padding: 10px;
+  padding: 17px;
   margin: 5px 0;
   border-radius: 10px;
+  font-weight: 600;
   color: white;
   width: 60vw;
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.4s ease;
+}
+
+.outputList.removing {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 
 .outputList label {
@@ -75,8 +85,8 @@ h1 {
 }
 
 .checkbox {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border: 1px solid white;
   display: flex;
   align-items: center;

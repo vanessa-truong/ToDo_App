@@ -45,7 +45,9 @@ const TodoList = () => {
 
       {todos.map((todo, index) => (
         <div
-          className={`outputList ${todo.completed ? "completed" : ""}`}
+          className={`outputList ${todo.completed ? "completed" : ""} ${
+            todo.deleted ? "deleted" : ""
+          }`}
           key={index}
         >
           <input type="checkbox" onClick={() => toggleComplete(index)} />
