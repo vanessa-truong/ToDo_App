@@ -14,22 +14,22 @@ CSS: Custom styles are applied using CSS to create a visually appealing and resp
 Users can input tasks in the provided input field.
 The input field supports the "Enter" key for easy task entry.
 
-## Adding Tasks:
+### Adding Tasks:
 
 When users input a task and press "Enter" or click the add button, the task is added to the list.
 Empty or whitespace-only tasks are not added.
 
-## Completing Tasks:
+### Completing Tasks:
 
 Users can mark tasks as completed by clicking the checkbox next to each task.
 Completed tasks are visually distinguished with a strike-through effect.
 
-## Deleting Tasks:
+### Deleting Tasks:
 
 Users can delete individual tasks by clicking the delete button (represented by a trash icon) next to each task.
 Deleted tasks are removed from the list.
 
-## Styling:
+### Styling:
 
 The project's styling is done with CSS to create an attractive and user-friendly interface.
 Styling includes custom input field design, task list appearance, and hover effects.
